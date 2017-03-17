@@ -30,7 +30,7 @@ public class XMLReader {
 
 	
 	
-	private static Catalog ReadCatalog() {
+	public static Catalog ReadCatalog() {
 		Catalog cat = ReadXMLFile();
 		
 		System.out.println("cat ID " + cat.getId());
@@ -39,7 +39,7 @@ public class XMLReader {
 		return cat;		
 	}
 
-	private static Catalog IncreasePrice(Catalog cat, double PriceIncrease)
+	public static Catalog IncreasePrice(Catalog cat, double PriceIncrease)
 	{
 		for (Book b : cat.getBooks()) {
 			double newPrice = (b.getPrice() * PriceIncrease) + b.getPrice();			
@@ -49,7 +49,7 @@ public class XMLReader {
 		return cat;
 	}
 	
-	private static void WriteXMLFile(Catalog cat) {
+	public static void WriteXMLFile(Catalog cat) {
 		try {
 
 			String basePath = new File("").getAbsolutePath();
@@ -70,7 +70,7 @@ public class XMLReader {
 		}
 	}
 
-	private static Catalog ReadXMLFile() {
+	public static Catalog ReadXMLFile() {
 
 		Catalog cat = null;
 
